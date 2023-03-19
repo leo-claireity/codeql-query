@@ -8,6 +8,9 @@ jobs:
     if: github.repository == 'githubtraining/exercise-reference-a-codeql-query'
     steps:
       - uses: actions/checkout@master
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
       - uses: codeql-config.yml/init@v1
         with: 
           languages: cpp, csharp, python
