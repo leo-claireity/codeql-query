@@ -8,4 +8,8 @@ jobs:
     if: github.repository == 'githubtraining/exercise-reference-a-codeql-query'
     steps:
       - uses: actions/checkout@master
+      - uses: codeql-config.yml/init@v1
+        with: 
+          languages: cpp, csharp, python
+          db-location: '${{ github.workspace }}/codeql_dbs'
       - uses: gaurav-nelson/github-action-markdown-link-check@v1
